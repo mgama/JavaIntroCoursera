@@ -67,10 +67,28 @@ public class PerimeterAssignmentRunner {
             prevPt = currPt;
         };
         System.out.println("The array of sides is");
-        for(int i =0; i < numberOfPoints; i++) {
+        double largestNumber = 0.0;
+        for(int i = 0; i <= numberOfPoints; i++) {
             System.out.println(arrayOfSides[i]);
+            System.out.println("the largest number is " + largestNumber);
+            if (i == (numberOfPoints - 1)) {
+                System.out.println("Breaking out of the loop");
+                break;
+            }
+            else {
+                System.out.println("the current value of array of side is " + arrayOfSides[i]);
+                int j = i + 1;
+                System.out.println("the next value on the array is " + arrayOfSides[j]);
+                if (arrayOfSides[i] >= arrayOfSides[j]){
+                    largestNumber = arrayOfSides[i];
+                    System.out.println("the current value is greater than the next one ");
+                }
+                else{
+                    System.out.println("the current value was not greater");
+                }
+            }
         }
-        return 0.0;
+        return largestNumber;
     }
 
     public double getLargestX(Shape s) {
